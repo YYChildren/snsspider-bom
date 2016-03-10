@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mingchao</groupId>
 	<artifactId>snsspider</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>snsspider</name>
 	<packaging>pom</packaging>
 	<dependencyManagement>
