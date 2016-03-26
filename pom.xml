@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.mingchao</groupId>
 	<artifactId>snsspider-bom</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>snsspider-bom</name>
 	<packaging>pom</packaging>
-	
+
 	<properties>
 		<org.springframework.version>4.2.5.RELEASE</org.springframework.version>
 		<hibernate.ogm.version>4.2.0.Final</hibernate.ogm.version>
@@ -17,14 +17,25 @@
 		<phantomjs.version>1.2.0</phantomjs.version>
 		<xmlapis.version>1.4.01</xmlapis.version>
 		<guava.version>19.0</guava.version>
+		<commons-lang3.version>3.1</commons-lang3.version>
 		<commonslogging.version>1.2</commonslogging.version>
 		<log4j.version>1.2.17</log4j.version>
 		<tools.version>1.7.0</tools.version>
 	</properties>
-	
-	
+
+
 	<dependencyManagement>
 		<dependencies>
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${org.springframework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- hibernate-ogm -->
 			<dependency>
 				<groupId>org.hibernate.ogm</groupId>
 				<artifactId>hibernate-ogm-bom</artifactId>
@@ -119,6 +130,13 @@
 				<version>${guava.version}</version>
 			</dependency>
 
+			<!-- apache commons -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+
 			<!-- log -->
 			<dependency>
 				<groupId>commons-logging</groupId>
@@ -141,6 +159,17 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>io.spring.repo.maven.release</id>
+			<url>http://repo.spring.io/release/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<build>
 		<plugins>
 			<plugin>
